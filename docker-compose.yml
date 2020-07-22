@@ -1,0 +1,15 @@
+---
+version: '3.0'
+services:
+   dashboard:
+    command: python app_barplot.py
+    build: .
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./data:/home/myuser/data:ro
+   dashboardhist:
+    command: python app_histogram.py
+    build: .
+    ports:
+      - "8050:8050"
